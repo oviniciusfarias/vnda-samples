@@ -1,0 +1,315 @@
+{
+  "main":true,
+  "available":true,
+  "sku":"1004-1",
+  "name":"Verde P",
+  "slug":"cor-e-tamanho-verde-p",
+  "min_quantity":1,
+  "quantity":100,
+  "custom_attributes":  {
+
+  },
+  "properties":  {
+    "property1": {
+      "name": "Cor ",
+      "value": "#008000",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "P",
+      "defining": true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.479-03:00",
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 100,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": true,
+  "sku": "1004-2",
+  "name": "Verde M",
+  "slug": "cor-e-tamanho-verde-m",
+  "min_quantity": 1,
+  "quantity": 100,
+  "custom_attributes": {
+
+  },
+  "properties": {
+    "property1": {
+      "name": "Cor",
+      "value": "#008000",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "M",
+      "defining":true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.587-03:00",
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 100,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main":false,
+  "available":true,
+  "sku":"1004-4",
+  "name":"Vermelho P",
+  "slug":"cor-e-tamanho-vermelho-p",
+  "min_quantity":1,
+  "quantity":100,
+  "custom_attributes":  {
+
+  },
+  "properties":  {
+    "property1"  :    {
+      "name"    :"Cor ",
+      "value"    :"#FF0000",
+      "defining"    :true
+    },
+    "property2"  :    {
+      "name"    :"Tamanho",
+      "value"    :"P",
+      "defining"    :true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.653-03:00", 
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 100,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": true,
+  "sku": "1004-3",
+  "name": "Verde G",
+  "slug": "cor-e-tamanho-verde-g",
+  "min_quantity": 1,
+  "quantity": 100,
+  "custom_attributes": {
+
+  },
+  "properties": {
+    "property1": {
+      "name": "Cor ",
+      "value": "#008000",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "G",
+      "defining": true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.768-03:00",
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 100,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": false,
+  "sku": "1004-5",
+  "name": "Vermelho M",
+  "slug": "cor-e-tamanho-vermelho-m",
+  "min_quantity": 1,
+  "quantity": 0,
+  "custom_attributes": {
+
+  },
+  "properties": {
+    "property1": {
+      "name": "Cor ",
+      "value": "#FF0000",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "M",
+      "defining": true
+    }
+  },
+  "updated_at":"2016-03-22T10:41:20.797-03:00", 
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 0,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": true,
+  "sku": "1004-6",
+  "name": "Vermelho G",
+  "slug": "cor-e-tamanho-vermelho-g",
+  "min_quantity": 1,
+  "quantity": 2,
+  "custom_attributes":  {
+
+  },
+  "properties":{
+    "property1": {
+      "name": "Cor ",
+      "value": "#FF0000",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "G",
+      "defining": true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.825-03:00", 
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 2,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": false,
+  "sku": "1004-7",
+  "name": "Azul P",
+  "slug": "cor-e-tamanho-azul-p",
+  "min_quantity": 1,
+  "quantity": 0,
+  "custom_attributes": {
+
+  },
+  "properties": {
+    "property1": {
+      "name": "Cor",
+      "value" :"#0000FF",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "P",
+      "defining": true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.853-03:00 ", 
+  "price":100.0,
+  "installments":  [
+    100.0
+  ],
+  "available_quantity": 0,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": true,
+  "sku": "1004-8",
+  "name": "Azul M",
+  "slug": "cor-e-tamanho-azul-m",
+  "min_quantity": 1,
+  "quantity": 15,
+  "custom_attributes": {
+
+  },
+  "properties": {
+    "property1": {
+      "name": "Cor ",
+      "value": "#0000FF",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "M",
+      "defining": true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.881-03:00", 
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "available_quantity": 15,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
+{
+  "main": false,
+  "available": true,
+  "sku": "1004-9",
+  "name": "Azul G",
+  "slug": "cor-e-tamanho-azul-g",
+  "min_quantity": 1,
+  "quantity": 1,
+  "custom_attributes":  {
+
+  },
+  "properties": {
+    "property1": {
+      "name": "Cor",
+      "value": "#0000FF",
+      "defining": true
+    },
+    "property2": {
+      "name": "Tamanho",
+      "value": "G",
+      "defining": true
+    }
+  },
+  "updated_at": "2016-03-22T10:41:20.910-03:00", 
+  "price": 100.0,
+  "installments":  [
+    100.0
+  ],
+  "available_quantity": 1,
+  "weight": 0.001,
+  "width": 11.0,
+  "height": 2.0,
+  "length": 16.0,
+  "handling_days": 0
+}
