@@ -1,1 +1,1 @@
-# vnda-samples
+# Documentações de front da Vnda
