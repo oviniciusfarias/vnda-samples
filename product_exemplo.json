@@ -1,0 +1,296 @@
+{
+  "id": 70,
+  "available": true,
+  "reference": "1004",
+  "name": "Cor e tamanho",
+  "description": "<p>Cor e tamanho</p>",
+  "slug": "cor-e-tamanho",
+  "min_quantity": 1,
+  "image_url": "//b2.vnda.com.br/demo/2015/07/13/15_06_47_824_imgdefault1.png?1436810808.74325",
+  "url": "http://fontana.vnda.com.br/produto/cor-e-tamanho-70",
+  "tag_names": [
+    "subsubcategoria-1",
+    "subcategoria-1",
+    "categoria",
+    "categoria-1"
+  ],
+  "discount_id": 0,
+  "on_sale": false,
+  "price": 100.0,
+  "installments": [
+    100.0
+  ],
+  "updated_at": "2016-03-24T17:14:42.739-03:00",
+  "category_tags": [
+    {
+      "tag_type": "categoria",
+      "name": "subsubcategoria-1",
+      "title": "SubSubCategoria 1"
+    },
+    {
+      "tag_type": "categoria",
+      "name": "subcategoria-1",
+      "title": "SubCategoria 1"
+    },
+    {
+      "tag_type": "categoria",
+      "name": "categoria",
+      "title": "Categoria"
+    },
+    {
+      "tag_type": "categoria",
+      "name": "categoria-1",
+      "title": "Categoria 1"
+    }
+  ],
+  "sale_price": 100.0,
+  "rating": {
+    "rating": 0.0,
+    "votes": 0
+  },
+  "variants": [
+    {
+      "87": {
+        "properties": {
+          "property1": " {
+            \"name\":\"Cor \",
+            \"value\":\"#008000\",
+            \"defining\":true
+          }          ",
+          "property2": " {
+            \"name\":\"Tamanho\",
+            \"value\":\"P\",
+            \"defining\":true
+          }          ",
+          "property3": " {
+            \"name\":\"\",
+            \"value\":\"\",
+            \"defining\":false
+          }          "},
+          "available": true,
+          "image_url"  :  "//b1.vnda.com.br/x120/demo/2015/07/13/15_06_47_824_imgdefault1.png",
+          "id"  :  87,
+          "sku"  :  "1004-1",
+          "price"  :  100.0,
+          "stock"  :  100,
+          "name"  :  "Verde | P"
+        }
+      },
+      {
+        "91": {
+          "properties"  :          {
+            "property1"    :  "            {
+              \"name\":\"Cor \",
+              \"value\":\"#FF0000\",
+              \"defining\":true
+            }            ",
+"            property2": "            {
+              \"name\":\"Tamanho\",
+              \"value\":\"M\",
+              \"defining\":true
+            }            ",
+"            property3": "            {
+              \"name\":\"\",
+              \"value\":\"\",
+              \"defining\":false
+            }            "},
+"            available": false,
+            "image_url"    :  "//b1.vnda.com.br/x120/demo/2015/07/13/15_06_49_688_imgdefault5.png",
+            "id"    :  91,
+            "sku"    :  "1004-5",
+            "price"    :  100.0,
+            "stock"    :  0,
+            "name"    :  "Vermelho | M"
+          }
+        },
+        {
+          "92"  :          {
+            "properties"    :            {
+              "property1"      :  "              {
+                \"name\":\"Cor \",
+                \"value\":\"#FF0000\",
+                \"defining\":true
+              }              ",
+"              property2": "              {
+                \"name\":\"Tamanho\",
+                \"value\":\"G\",
+                \"defining\":true
+              }              ",
+"              property3": "              {
+                \"name\":\"\",
+                \"value\":\"\",
+                \"defining\":false
+              }              "},
+"              available": true,
+              "image_url"      :  "//b1.vnda.com.br/x120/demo/2015/07/13/15_06_49_954_imgdefault6.png",
+              "id"      :  92,
+              "sku"      :  "1004-6",
+              "price"      :  100.0,
+              "stock"      :  2,
+              "name"      :  "Vermelho | G"
+            }
+          },
+          {
+            "93"    :            {
+              "properties"      :              {
+                "property1"        :  "                {
+                  \"name\":\"Cor \",
+                  \"value\":\"#0000FF\",
+                  \"defining\":true
+                }                ",
+"                property2": "                {
+                  \"name\":\"Tamanho\",
+                  \"value\":\"P\",
+                  \"defining\":true
+                }                ",
+"                property3": "                {
+                  \"name\":\"\",
+                  \"value\":\"\",
+                  \"defining\":false
+                }                "},
+"                available": false,
+                "image_url"        :  "//b2.vnda.com.br/x120/demo/2015/07/13/15_06_50_730_imgdefault7.png",
+                "id"        :  93,
+                "sku"        :  "1004-7",
+                "price"        :  100.0,
+                "stock"        :  0,
+                "name"        :  "Azul | P"
+              }
+            },
+            {
+              "94"      :              {
+                "properties"        :                {
+                  "property1"          :  "                  {
+                    \"name\":\"Cor \",
+                    \"value\":\"#0000FF\",
+                    \"defining\":true
+                  }                  ",
+"                  property2": "                  {
+                    \"name\":\"Tamanho\",
+                    \"value\":\"M\",
+                    \"defining\":true
+                  }                  ",
+"                  property3": "                  {
+                    \"name\":\"\",
+                    \"value\":\"\",
+                    \"defining\":false
+                  }                  "},
+"                  available": true,
+                  "image_url"          :  "//b1.vnda.com.br/x120/demo/2015/07/13/15_06_51_8_imgdefault8.png",
+                  "id"          :  94,
+                  "sku"          :  "1004-8",
+                  "price"          :  100.0,
+                  "stock"          :  15,
+                  "name"          :  "Azul | M"
+                }
+              },
+              {
+                "95"        :                {
+                  "properties"          :                  {
+                    "property1"            :  "                    {
+                      \"name\":\"Cor \",
+                      \"value\":\"#0000FF\",
+                      \"defining\":true
+                    }                    ",
+"                    property2": "                    {
+                      \"name\":\"Tamanho\",
+                      \"value\":\"G\",
+                      \"defining\":true
+                    }                    ",
+"                    property3": "                    {
+                      \"name\":\"\",
+                      \"value\":\"\",
+                      \"defining\":false
+                    }                    "},
+"                    available": true,
+                    "image_url"            :  "//b1.vnda.com.br/x120/demo/2015/07/13/15_06_47_824_imgdefault1.png",
+                    "id"            :  95,
+                    "sku"            :  "1004-9",
+                    "price"            :  100.0,
+                    "stock"            :  1,
+                    "name"            :  "Azul | G"
+                  }
+                },
+                {
+                  "88"          :                  {
+                    "properties"            :                    {
+                      "property1"              :  "                      {
+                        \"name\":\"Cor \",
+                        \"value\":\"#008000\",
+                        \"defining\":true
+                      }                      ",
+"                      property2": "                      {
+                        \"name\":\"Tamanho\",
+                        \"value\":\"M\",
+                        \"defining\":true
+                      }                      ",
+"                      property3": "                      {
+                        \"name\":\"\",
+                        \"value\":\"\",
+                        \"defining\":false
+                      }                      "},
+"                      available": true,
+                      "image_url"              :  "//b2.vnda.com.br/x120/demo/2015/07/13/15_06_48_198_imgdefault2.png",
+                      "id"              :  88,
+                      "sku"              :  "1004-2",
+                      "price"              :  100.0,
+                      "stock"              :  100,
+                      "name"              :  "Verde | M"
+                    }
+                  },
+                  {
+                    "90"            :                    {
+                      "properties"              :                      {
+                        "property1"                :  "                        {
+                          \"name\":\"Cor \",
+                          \"value\":\"#FF0000\",
+                          \"defining\":true
+                        }                        ",
+"                        property2": "                        {
+                          \"name\":\"Tamanho\",
+                          \"value\":\"P\",
+                          \"defining\":true
+                        }                        ",
+"                        property3": "                        {
+                          \"name\":\"\",
+                          \"value\":\"\",
+                          \"defining\":false
+                        }                        "},
+"                        available": true,
+                        "image_url"                :  "//b0.vnda.com.br/x120/demo/2015/07/13/15_06_48_781_imgdefault3.png",
+                        "id"                :  90,
+                        "sku"                :  "1004-4",
+                        "price"                :  100.0,
+                        "stock"                :  100,
+                        "name"                :  "Vermelho | P"
+                      }
+                    },
+                    {
+                      "89"              :                      {
+                        "properties"                :                        {
+                          "property1"                  :  "                          {
+                            \"name\":\"Cor \",
+                            \"value\":\"#008000\",
+                            \"defining\":true
+                          }                          ",
+"                          property2": "                          {
+                            \"name\":\"Tamanho\",
+                            \"value\":\"G\",
+                            \"defining\":true
+                          }                          ",
+"                          property3": "                          {
+                            \"name\":\"\",
+                            \"value\":\"\",
+                            \"defining\":false
+                          }                          "},
+"                          available": true,
+                          "image_url"                  :  "//b1.vnda.com.br/x120/demo/2015/07/13/15_06_49_96_imgdefault4.png",
+                          "id"                  :  89,
+                          "sku"                  :  "1004-3",
+                          "price"                  :  100.0,
+                          "stock"                  :  100,
+                          "name"                  :  "Verde | G"
+                        }
+                      }
+                    ]
+                  }

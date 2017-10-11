@@ -1,0 +1,103 @@
+{% comment %}
+{% if tag.type == 'pagina-marcas' %}
+  {% include 'partials/tag/marcas' %}
+{% elsif tag.type == 'loja' %}
+  {% include 'partials/tag/marca' %}
+{% else %}
+  {% include 'partials/tag/default' %}
+{% endif %}
+{% endcomment %}
+
+{% assign per_page = 30 %}
+{% if params.per_page %}
+  {% assign per_page = params.per_page %}
+{% endif %}
+
+{% load_products tag:tag.name parent_tag:parent_tag.name page:params.page per_page:per_page min_price:params.min_price max_price:params.max_price loja_tags:params.loja categoria_tags:params.categoria loja_operator:'or' property1_values:params.cor property2_values:params.tamanho sort:params.sort %}
+
+<div style="clear: both;">
+  <div style="width:29%; display: inline-block; background: silver; padding: 20px; vertical-align: top;">
+    <form method="GET">
+      <h1>Aggregations</h1>
+      <h2>min_price: {{ aggregations.min_price }}</h2>
+      <h2>max_price: {{ aggregations.max_price }}</h2>
+      <input type="text" name="min_price" value="{{ params.min_price }}" placeholder="A partir de R$" />
+      <input type="text" name="max_price" value="{{ params.max_price }}" placeholder="Até R$" />
+      <input type="submit" value="Buscar" />
+      <h2>Loja</h2>
+      {% for tag in aggregations.types.loja %}
+        <div>
+          <input type="checkbox" name="loja[]" value="{{tag.name}}" id="loja_{{ tag.name }}" {% if params.loja contains tag.name %}checked{% endif %} onChange="this.form.submit()" />
+          <label for="loja_{{ tag.name }}">{{ tag.title }}</label>
+        </div>
+      {% endfor %}
+      <br>
+
+      {% if aggregations.properties.property1.size > 0 %}
+        <h2>Cor</h2>
+        {% for property in aggregations.properties.property1 %}
+          <div>
+            <input type="checkbox" name="cor[]" value="{{property.value}}" id="cor_{{ property.value }}" {% if params.cor contains property.value %}checked{% endif %} onChange="this.form.submit()" />
+            <label for="cor_{{ property.value }}">{{ property.value }}</label>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <h2>Tamanho</h2>
+      {% for property in aggregations.properties.property2 %}
+        <div>
+          <input type="checkbox" name="tamanho[]" value="{{property.value}}" id="tamanho_{{ property.value }}" {% if params.tamanho contains property.value %}checked{% endif %} onChange="this.form.submit()" />
+          <label for="tamanho_{{ property.value }}">{{ property.value }}</label>
+        </div>
+      {% endfor %}
+
+      <h2>Ordenar</h2>
+      {% for option in sort_options %}
+        <div>
+          <input type="radio" name="sort" value="{{option.value}}" id="sort_{{ option.value }}" {% if params.sort == option.value %}checked{% endif %} onChange="this.form.submit()" />
+          <label for="sort_{{ option.value }}">{{ option.label }}</label>
+        </div>
+      {% endfor %}
+    </form>
+  </div>
+
+  <div style="width:70%; display: inline-block; background: lightgray; padding: 20px; vertical-align: top;">
+    <h1>Products</h1>
+    <h2>count: {{ pagination.count }}</h2>
+    <h2>size: {{ products.size }}</h2>
+    {% for product in products %}
+      <div style="display: inline-block; width: 280px; height: 280px; background: gainsboro; padding: 10px; margin: 10px; text-align: center; vertical-align: top;">
+        <h3>{{ product.name }}</h3>
+        {% for tag in product.tags %}
+          <div style="display: inline-block; background: gray; padding: 2px; margin: 2px; color: white;">
+            {{ tag.name }}
+          </div>
+        {% endfor %}
+        <h2>{{ product.price }}</h2>
+      </div>
+    {% endfor %}
+    <br>
+    <h1>Pagination</h1>
+    <h2>count: {{ pagination.count }}</h2>
+    <h2>current_page: {{ pagination.current_page }}</h2>
+    <h2>total_pages: {{ pagination.total_pages }}</h2>
+    <h2>next_url: {{ pagination.next_url }}</h2>
+    <h2>prev_url: {{ pagination.prev_url }}</h2>
+    <h2>pages:</h2>
+    
+    {% if pagination.current_page > 1 %}
+      <a href="{{ pagination.prev_url }}" title="Página anterior" class="prev">
+        < <
+      </a>
+    {% endif %}
+    {% for page in pagination.pages %}
+      <h3>- {{ page.number }}: {{ page.url }}</h3>
+    {% endfor %}
+
+    {% if pagination.total_pages > pagination.current_page %}
+      <a href="{{ pagination.next_url }}" title="Próxima página" class="next">
+        > >
+      </a>
+    {% endif %}
+  </div>
+</div>

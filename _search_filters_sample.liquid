@@ -1,0 +1,75 @@
+{% assign per_page = 30 %}
+{% if params.per_page %}
+  {% assign per_page = params.per_page %}
+{% endif %}
+
+{% load_products page:params.page per_page:per_page q:params.q per_page:per_page min_price:params.min_price max_price:params.max_price loja_tags:params.loja categoria_tags:params.categoriaobi loja_operator:'or' property1_values:params.cor property2_values:params.tamanho sort:params.sort %}
+
+<pre>
+  <h2>TAG DO TIPO LOJA</h2>
+  {{ aggregations.types.loja }}
+</pre>
+
+<pre>
+  <h2>TAG DO TIPO CATEGORIA</h2>
+  {{ aggregations.types.categoria }}
+</pre>
+
+<pre>
+  <h2>PROPRIEDADE 1</h2>
+  {{ aggregations.properties.property1 }}
+</pre>
+<pre>
+  <h2>PROPRIEDADE 2</h2>
+  {{ aggregations.properties.property2 }}
+</pre>
+
+<pre>
+  <h2>PREÇO</h2>
+  {{ aggregations.min_price }}
+  {{ aggregations.max_price }}
+</pre>
+
+<div style="width:70%; background: lightgray; padding: 20px; margin: 0 auto;">
+  <h1>Products</h1>
+  <h2>count: {{ pagination.count }}</h2>
+  <h2>size: {{ products.size }}</h2>
+  {% for product in products %}
+    <div style="display: inline-block; width: 280px; height: 280px; background: gainsboro; padding: 10px; margin: 10px; text-align: center; vertical-align: top;">
+      
+      <pre>
+        {{ product.variants | json }}
+      </pre>
+
+      <h3>{{ product.name }}</h3>
+      {% for tag in product.tags %}
+        <div style="display: inline-block; background: gray; padding: 2px; margin: 2px; color: white;">
+          {{ tag.name }}
+        </div>
+      {% endfor %}
+      <h2>{{ product.price }}</h2>
+    </div>
+  {% endfor %}
+  <br>
+  <h1>Pagination</h1>
+  <h2>count: {{ pagination.count }}</h2>
+  <h2>current_page: {{ pagination.current_page }}</h2>
+  <h2>total_pages: {{ pagination.total_pages }}</h2>
+  <h2>next_url: {{ pagination.next_url }}</h2>
+  <h2>prev_url: {{ pagination.prev_url }}</h2>
+  <h2>pages:</h2>
+  {% if pagination.current_page > 1 %}
+    <a href="{{ pagination.prev_url }}" title="Página anterior" class="prev">
+      < <
+    </a>
+  {% endif %}
+  {% for page in pagination.pages %}
+    <h3>- {{ page.number }}: {{ page.url }}</h3>
+  {% endfor %}
+
+  {% if pagination.total_pages > pagination.current_page %}
+    <a href="{{ pagination.next_url }}" title="Próxima página" class="next">
+      > >
+    </a>
+  {% endif %}
+</div>

@@ -1,0 +1,58 @@
+// product.images sample atual
+[
+  {
+    "sku": "jlkprincepinkrp",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-861.jpg?1493762970.29497"
+  },
+  {
+    "sku": "jlkprincepinkrg",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-861.jpg?1493762970.29497"
+  },
+  {
+    "sku": "jlkprincepinkrm",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-861.jpg?1493762970.29497"
+  },
+  {
+    "sku": "jlkprincepinkrg",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-862.jpg?1493762970.58048"
+  },
+  {
+    "sku": "jlkprincepinkrp",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-862.jpg?1493762970.58048"
+  },
+  {
+    "sku": "jlkprincepinkrm",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-862.jpg?1493762970.58048"
+  },
+  {
+    "sku": "jlkprincepinkrp",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-860.jpg?1493762970.40901"
+  },
+  {
+    "sku": "jlkprincepinkrg",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-860.jpg?1493762970.40901"
+  },
+  {
+    "sku": "jlkprincepinkrm",
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-860.jpg?1493762970.40901"
+  }
+]
+
+
+// product.images sample sugerido
+[
+  {
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-861.jpg?1493762970.29497",
+    "skus": [ "jlkprincepinkrp", "jlkprincepinkrg", "jlkprincepinkrm" ]
+  },
+  {
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-862.jpg?1493762970.58048",
+    "skus": ["jlkprincepinkrg", "jlkprincepinkrp", "jlkprincepinkrm"]
+  },
+  {
+    "url": "//b0.vnda.com.br/stealthelook/2017/05/02/jlkprincerose-t-shirt-bordada-prince-rose-860.jpg?1493762970.40901",
+    "skus": [ "jlkprincepinkrp", "jlkprincepinkrg", "jlkprincepinkrm" ],
+  },
+]
+
+

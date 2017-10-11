@@ -1,0 +1,53 @@
+var localSelector = {
+
+  getLocalForZip: function(zip) {
+    $.ajax({
+      type: "GET",
+      url: '/cep/choose-local',
+      data: {
+        zip: zip
+      },
+      success: function(response) {
+        if (response.serves) {
+          localSelector.selectLocal(response.inventory_slug);
+        } else {
+          console.log('no local found for zip code');
+        }
+      },
+      dataType: 'JSON'
+    });
+  },
+
+  selectLocal: function(inventory_slug) {
+    $.ajax({
+      type: 'POST',
+      dataType: 'JSON',
+      url: "/carrinho/extras",
+      data: {
+        extras: {
+          inventory_slug: inventory_slug
+        }
+      },
+      success: function(cart) {
+        window.location = '/';
+      }
+    });
+  }
+
+};
+
+$('#choose-local input[name=zip]').on('keypress', function(e) {
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+
+  if (keycode == '13') {
+    localSelector.getLocalForZip($('#choose-local input[name=zip]').val());
+  }
+});
+
+{% if cart.extra.inventory_slug == nil or cart.extra.inventory_slug == "" %}
+  <li class="item item-right">
+    <div id="choose-local">
+      <input name="zip" type="text" placeholder="Digite seu CEP"/>
+    </div>
+  </li>
+{% endif %}

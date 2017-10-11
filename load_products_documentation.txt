@@ -1,0 +1,189 @@
+NOVA TAG:
+
+// tag {% load_products %}
+// Carrega produtos, filtros, sort e paginação
+// Ainda que não seja informado os parâmetros "per_page" serão listados no máximo 25 produtos por página.
+// O parâmetro "tag" é o único obrigatório para listar produtos
+
+
+-- exemplo --
+
+{% load_products tag:tag.name parent_tag:parent_tag.name page:params.page per_page:per_page min_price:params.min_price max_price:params.max_price loja_tags:params.loja loja_operator:'or' property1_values:params.cor property2_values:params.tamanho sort:params.sort %}
+
+-- end | exemplo --
+
+// PARAMETROS
+
+@tag
+value: tag.name
+// a tag dos produtos a serem carregados
+
+@parent_tag
+value: parent_tag.name
+// a tag pai dos produtos a serem carregados
+
+@page
+value: NUMBER
+// a página atual da listagem de produtos
+
+@per_page
+value: NUMBER
+// quantidade de produtos por página
+
+@min_price
+value: params.min_price
+// filtro de preço mínimo
+
+@max_price
+value: params.max_price
+// filtro de preço máximo
+
+@TIPO_DA_TAG_tags
+value: params.TIPO_DA_TAG
+// filtro por tipo de tag
+// podem ser usados mais de um tipo de tag
+// filtro entre tipos diferentes é sempre AND, então o produto precisa ter pelo menos uma tag de cada tipo para ser retornado
+
+@TIPO_DA_TAG_operator
+value: OR || AND
+// Define o operador em filtros entre tags do mesmo tipo
+// O padrão é OR, então só é preciso seta-lo quando a regra dos filtros for AND
+// Caso seja OR, o produto precisa ter UMA das tags selecionadas para ser retornado
+// Caso seja AND, o produto precisa ter TODAS as tags selecionadas para ser retornado
+
+@property1_values
+value: params.NOME_DA_PROPRIEDADE_1
+// filtro pelo atributo 1
+
+@property2_values
+value: params.NOME_DA_PROPRIEDADE_2
+// filtro pelo atributo 2
+
+@sort
+value: params.sort
+// ordenação dos produtos
+
+
+// LISTANDO OS PRODUTOS v2
+// Obs: {{ product.images }} lista as imagens do produto
+// Obs: {{ product.variants }} lista as variações do produto
+
+{% comment %} Listando os produtos {% endcomment %}
+{% for product in products %}
+  {{ product }}
+{% endfor %}
+
+
+// FILTROS v2
+// os filtros são montados dentro de um form, que tem como action a url atual
+// as variáveis dos filtros são setadas APÓS a chamada da tag load_products
+
+// variáveis para filtros
+
+// FILTRO DE PREÇO
+{{ aggregations.min_price }}
+{{ aggregations.max_price }}
+
+<input type="text" name="min_price" value="{{ params.min_price }}" placeholder="A partir de R$" />
+<input type="text" name="max_price" value="{{ params.max_price }}" placeholder="Até R$" />
+
+// ====================================
+
+//FILTRO POR TAG
+{{ aggregations.types['TIPO_DA_TAG'] }}
+
+-- exemplo --
+
+{% if aggregations.types.loja.length > 0 %}
+  <h2>MARCAS</h2>
+  {% for tag in aggregations.types.marca %}
+    <div>
+      <input type="checkbox" name="marca[]" value="{{tag.name}}" id="marca_{{ tag.name }}" {% if params.marca contains tag.name %}checked{% endif %} onChange="this.form.submit()" />
+      <label for="marca_{{ tag.name }}">{{ tag.title }}</label>
+    </div>
+  {% endfor %}
+{% endif %}
+
+{% if aggregations.types.loja.length > 0 %}
+  <h2>CATEGORIAS</h2>
+  {% for tag in aggregations.types.categoria %}
+    <div>
+      <input type="checkbox" name="categoria[]" value="{{tag.name}}" id="categoria_{{ tag.name }}" {% if params.categoria contains tag.name %}checked{% endif %} onChange="this.form.submit()" />
+      <label for="categoria_{{ tag.name }}">{{ tag.title }}</label>
+    </div>
+  {% endfor %}
+{% endif %}
+
+-- end | exemplo --
+
+// ====================================
+
+//FILTRO POR ATRIBUTOS
+{{ aggregations.properties.property1 }}
+{{ aggregations.properties.property2 }}
+{{ aggregations.properties.property3 }}
+
+-- exemplo --
+
+{% if aggregations.properties.property1.length > 0 %}
+  <h2>COR</h2>
+  {% for property in aggregations.properties.property1 %}
+    <div>
+      <input type="checkbox" name="cor[]" value="{{property.value}}" id="cor_{{ property.value }}" {% if params.cor contains property.value %}checked{% endif %} onChange="this.form.submit()" />
+      <label for="cor_{{ property.value }}">{{ property.value }}</label>
+    </div>
+  {% endfor %}
+{% endif %}
+
+{% if aggregations.properties.property2.length > 0 %}
+  <h2>Tamanho</h2>
+  {% for property in aggregations.properties.property2 %}
+    <div>
+      <input type="checkbox" name="tamanho[]" value="{{property.value}}" id="tamanho_{{ property.value }}" {% if params.tamanho contains property.value %}checked{% endif %} onChange="this.form.submit()" />
+      <label for="tamanho_{{ property.value }}">{{ property.value }}</label>
+    </div>
+  {% endfor %}
+{% endif %}
+
+-- end | exemplo --
+
+
+// ====================================
+
+// ORDENAÇÃO
+{{ sort_options }}
+
+-- exemplo --
+
+<h2>Ordenar</h2>
+{% for option in sort_options %}
+  <div>
+    <input type="radio" name="sort" value="{{option.value}}" id="sort_{{ option.value }}" {% if params.sort == option.value %}checked{% endif %} onChange="this.form.submit()" />
+    <label for="sort_{{ option.value }}">{{ option.label }}</label>
+  </div>
+{% endfor %}
+
+-- end | exemplo --
+
+// ====================================
+
+// PAGINAÇÃO
+// a variável da paginação é setada APÓS a chamada da tag load_products
+{{ pagination }}
+
+-- exemplo --
+{% if pagination.total_pages > 1 %}
+  <div class="pagination">
+    {% for page in pagination.pages %}
+      {% if pagination.current_page == page.number %}
+        <span>{{ page.number }}</span>
+      {% else %}
+        <a href="{{ page.url }}">{{ page.number }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+-- end | exemplo --
+
+
+
