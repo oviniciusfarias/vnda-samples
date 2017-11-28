@@ -1,0 +1,12 @@
+{% comment %}
+  calcula o preço com desconto por pagar em boleto
+  por exemplo
+  se a store traz 5%
+  o calculo feito aqui é
+  (preço a vista * 95 (100 - 5%)) / 100
+  tentei fazer direto preco a vista * 0.05 mas o liquid transformava o 0.05 em 0
+{% endcomment %}
+{% assign preco_a_vista = product | apply_discount %}
+{% assign desconto_boleto = 100 | minus: store.settings.slip_discount %}
+{% assign preco_boleto = preco_a_vista | times: desconto_boleto %}
+{% assign preco_boleto = preco_boleto | divided_by: 100 %}
